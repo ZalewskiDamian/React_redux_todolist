@@ -1,8 +1,11 @@
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 
 const TodoList = () => {
   return (
-    <div>TodoList</div>
+    <Box textAlign='center' my='4'>
+        No Todos Yay!
+    </Box>
   )
 }
 

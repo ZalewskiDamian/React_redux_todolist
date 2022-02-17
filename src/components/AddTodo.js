@@ -1,8 +1,11 @@
 import { FormControl, Flex, Input, Button } from '@chakra-ui/react'
 import React, {useState} from 'react'
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../redux/actions';
 
 const AddTodo = () => {
     const [value, setValue] = useState('');
+    const dispatch = useDispatch();
 
     const handleInput = (e) => {
         setValue(e.target.value);
@@ -10,6 +13,7 @@ const AddTodo = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(addTodo(value));
         setValue('');
     }
 

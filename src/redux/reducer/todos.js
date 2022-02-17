@@ -14,9 +14,7 @@ const todos = (state = initialState, action) => {
         } 
         case TOGGLE_TODO: {
             const { id } = action.payload;
-            const todos = state.todos.map(obj => {
-                return obj.id === id ? {...obj, completed: !obj.completed } : obj
-            });
+            const todos = state.todos.map(obj => { return obj.id === id ? {...obj, completed: !obj.completed } : obj });
             return { todos }
         }
             

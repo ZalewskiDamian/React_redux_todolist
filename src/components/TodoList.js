@@ -1,13 +1,14 @@
 import { Box } from '@chakra-ui/react'
 import { useSelector } from 'react-redux';
+import { getTodosByVisibilityFilter } from '../redux/selector';
 import Todo from './Todo';
 
 const TodoList = () => {
-  const { todos } = useSelector(state => state.todos);
-  console.log(todos)
+  const { todos, visibilityFilter } = useSelector(state => state);
+  const filterTodos = getTodosByVisibilityFilter(todos, visibilityFilter);
   return (
     <Box my={3}>
-      {todos.length ? todos.map(todo => (
+      {filterTodos.length ? filterTodos.map(todo => (
         <Todo 
           key={todo.id}
           todo={todo} 

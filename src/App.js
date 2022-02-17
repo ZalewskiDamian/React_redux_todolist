@@ -1,10 +1,13 @@
-import './App.css';
+import React from 'react';
+import { Container, Heading } from '@chakra-ui/react'
+import AddTodo from './components/AddTodo';
 
 function App() {
   return (
-    <div className="App">
-      <h1>test</h1>
-    </div>
+    <Container maxW='container.sm'>
+      <Heading my='4'>Todo List</Heading>
+      <AddTodo />
+    </Container>
   );
 }
 
